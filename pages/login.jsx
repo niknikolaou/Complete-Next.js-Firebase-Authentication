@@ -73,7 +73,9 @@ const LoginPage = () => {
             />
             {errors.password && <p className="text-red-400">{errors.password.message}</p>}
           </div>
-
+           <button type="button" onClick={() => router.push('/forgot-password')}  className="text-sm text-blue-500 hover:text-blue-700 cursor-pointer">
+               Forgot Password?
+            </button>
           <div className="flex justify-center pt-8">
             <button
               type="submit"

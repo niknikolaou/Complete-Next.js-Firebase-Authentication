@@ -9,8 +9,8 @@ const DashboardPage = () => {
 
   const addWallet = async () => {
     const data = {
-      name: 'John snow',
-      house: 'Stark'
+      email: user.email,
+      wallet: '0x000'
     }
     const { result, error } = await addData('wallets', user.uid, data)
 
