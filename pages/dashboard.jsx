@@ -1,21 +1,28 @@
 import ProtectedRoute from "../components/ProtectedRoute";
 import { useAuth } from "@/context/AuthContext";
-import {firebase_app} from "../firebase/config";
 import  addData  from "../firebase/firestore/addData";
+import { ConnectWallet, useAddress   } from "@thirdweb-dev/react";
+
 
 
 const DashboardPage = () => {
-  const { user } = useAuth();
-
+  const { user } = useAuth()
+  const address = useAddress()
+  
   const addWallet = async () => {
+    
+    if(!address) return console.log('No wallet connected')
+    else
+    {
     const data = {
       email: user.email,
-      wallet: '0x000'
+      wallet: address,
     }
     const { result, error } = await addData('wallets', user.uid, data)
 
     if (error) {
       return console.log(error)
+    }
     }
   };
 
@@ -27,7 +34,14 @@ const DashboardPage = () => {
           <h1>Hello {user.email}</h1>
           
           <h2 className="text-2xl font-semibold">You are logged in, this is dashboard page!</h2>
-          <button onClick={addWallet}>Add Data</button>
+          <button  onClick={addWallet}  className="px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700">
+           Connect Account with Wallet
+           </button>
+        </div>
+        <div className="justify-center">
+        
+        <ConnectWallet theme="dark" btnTitle="Connect your Wallet"/>
+
         </div>
       </div>
     
