@@ -5,7 +5,6 @@ import { Dropdown } from 'primereact/dropdown';
 import { Rating } from 'primereact/rating';
 import { PickList } from 'primereact/picklist';
 import { OrderList } from 'primereact/orderlist';
-import { ProductService } from '../../../demo/service/ProductService';
 import { InputText } from 'primereact/inputtext';
 
 const ListDemo = () => {
@@ -36,7 +35,7 @@ const ListDemo = () => {
     ];
 
     useEffect(() => {
-        ProductService.getProducts().then((data) => setDataViewValue(data));
+
         setGlobalFilterValue('');
     }, []);
 

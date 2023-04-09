@@ -19,8 +19,7 @@ import { TreeSelect } from 'primereact/treeselect';
 import { SelectButton } from 'primereact/selectbutton';
 import { Button } from 'primereact/button';
 import { InputNumber } from 'primereact/inputnumber';
-import { CountryService } from '../../../demo/service/CountryService';
-import { NodeService } from '../../../demo/service/NodeService';
+
 
 export const InputDemo = () => {
     const [floatValue, setFloatValue] = useState('');
@@ -89,8 +88,7 @@ export const InputDemo = () => {
     ];
 
     useEffect(() => {
-        CountryService.getCountries().then((data) => setAutoValue(data));
-        NodeService.getTreeNodes().then((data) => setTreeSelectNodes(data));
+
     }, []);
 
     const searchCountry = (event) => {

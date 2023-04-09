@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Tree } from 'primereact/tree';
 import { TreeTable } from 'primereact/treetable';
 import { Column } from 'primereact/column';
-import { NodeService } from '../../../demo/service/NodeService';
+
 
 const TreeDemo = () => {
     const [treeNodes, setTreeNodes] = useState([]);
@@ -11,8 +11,7 @@ const TreeDemo = () => {
     const [selectedTreeTableNodeKeys, setSelectedTreeTableNodeKeys] = useState([]);
 
     useEffect(() => {
-        NodeService.getTreeNodes().then((data) => setTreeNodes(data));
-        NodeService.getTreeTableNodes().then((data) => setTreeTableNodes(data));
+
     }, []);
 
     return (

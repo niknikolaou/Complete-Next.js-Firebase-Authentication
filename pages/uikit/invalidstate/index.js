@@ -9,7 +9,6 @@ import { Chips } from 'primereact/chips';
 import { Dropdown } from 'primereact/dropdown';
 import { MultiSelect } from 'primereact/multiselect';
 import { Password } from 'primereact/password';
-import { CountryService } from '../../../demo/service/CountryService';
 
 const InvalidStateDemo = () => {
     const [countries, setCountries] = useState([]);
@@ -34,9 +33,7 @@ const InvalidStateDemo = () => {
     ];
 
     useEffect(() => {
-        CountryService.getCountries().then((countries) => {
-            setCountries(countries);
-        });
+
     }, []);
 
     const searchCountry = (event) => {

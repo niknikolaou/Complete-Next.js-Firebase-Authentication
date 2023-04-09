@@ -43,7 +43,7 @@ const SignupPage = () => {
     try {
       await signUp(data.email, data.password)
       showSuccess()
-      router.push("/dashboard")
+      router.push("/login")
     } catch (error) {
       console.log(error)
       const cleanErrorMessage = error.message.split('/')[1].replace(/[^a-zA-Z ]/g, " ")
@@ -64,10 +64,12 @@ const SignupPage = () => {
   const handleGoogleSignUp = async () => {
     try {
       await ProviderSignIn()
-      router.push("/dashboard")
+      showSuccess()
+      router.push("/login")
     } catch (error) {
       const cleanErrorMessage = error.message.split('/')[1].replace(/[^a-zA-Z ]/g, " ")
       setErrorMessage(cleanErrorMessage)
+      showError()
     }
   }
 

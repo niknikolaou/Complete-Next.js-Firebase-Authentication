@@ -8,7 +8,6 @@ import { DataTable } from 'primereact/datatable';
 import { OverlayPanel } from 'primereact/overlaypanel';
 import { InputText } from 'primereact/inputtext';
 import { confirmPopup, ConfirmPopup } from 'primereact/confirmpopup';
-import { ProductService } from '../../../demo/service/ProductService';
 
 const OverlayDemo = () => {
     const [displayBasic, setDisplayBasic] = useState(false);
@@ -43,7 +42,7 @@ const OverlayDemo = () => {
     };
 
     useEffect(() => {
-        ProductService.getProductsSmall().then((data) => setProducts(data));
+
     }, []);
 
     const toggle = (event) => {

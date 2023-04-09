@@ -13,8 +13,7 @@ import { Slider } from 'primereact/slider';
 import { TriStateCheckbox } from 'primereact/tristatecheckbox';
 import { ToggleButton } from 'primereact/togglebutton';
 import { Rating } from 'primereact/rating';
-import { CustomerService } from '../../../demo/service/CustomerService';
-import { ProductService } from '../../../demo/service/ProductService';
+
 
 import { InputText } from 'primereact/inputtext';
 
@@ -74,16 +73,6 @@ const TableDemo = () => {
     useEffect(() => {
         setLoading2(true);
 
-        CustomerService.getCustomersLarge().then((data) => {
-            setCustomers1(getCustomers(data));
-            setLoading1(false);
-        });
-        CustomerService.getCustomersLarge().then((data) => {
-            setCustomers2(getCustomers(data));
-            setLoading2(false);
-        });
-        CustomerService.getCustomersMedium().then((data) => setCustomers3(data));
-        ProductService.getProductsWithOrdersSmall().then((data) => setProducts(data));
 
         initFilters1();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
