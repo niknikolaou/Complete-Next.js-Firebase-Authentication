@@ -43,7 +43,7 @@ const SignupPage = () => {
     try {
       await signUp(data.email, data.password)
       showSuccess()
-      router.push("/login")
+      router.push("/")
     } catch (error) {
       console.log(error)
       const cleanErrorMessage = error.message.split('/')[1].replace(/[^a-zA-Z ]/g, " ")
