@@ -65,7 +65,7 @@ const SignupPage = () => {
     try {
       await ProviderSignIn()
       showSuccess()
-      router.push("/login")
+      router.push("/")
     } catch (error) {
       const cleanErrorMessage = error.message.split('/')[1].replace(/[^a-zA-Z ]/g, " ")
       setErrorMessage(cleanErrorMessage)
