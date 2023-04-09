@@ -1,14 +1,26 @@
 import React from "react"
-import LoginPage from "./login"
+import LoginPage from "."
 
-export default function AccessDenied() {
+export function AccessDenied() {
   return (
     <>
     <div >
-      <h1 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">Access Denied</h1>
-      <h2 className="px-12 mt-8 text-center text-2xl font-semibold text-blue-900">You must be logged in to view this page</h2>
+      <label className="text-center block text-900 text-xl font-medium">Access Denied</label>
+      <label className="text-center block text-900 text-xl font-medium">You must be logged in to view this page</label>
       <LoginPage/>
     </div>
     </>
   )
 }
+
+AccessDenied.getLayout = function getLayout(page) {
+  return (
+      <React.Fragment>
+        
+          {page}
+         {/* <AppConfig simple />*/ }
+      </React.Fragment>
+  )
+}
+
+export default AccessDenied
